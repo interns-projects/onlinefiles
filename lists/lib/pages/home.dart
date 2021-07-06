@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
-class home extends StatefulWidget {
-  const home({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
-  _homeState createState() => _homeState();
+  _HomeState createState() => _HomeState();
 }
 
-class _homeState extends State<home> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:SafeArea(child: Text('hello world')),
-    );
+      body:SafeArea(
+        child: Column(
+          children : [
+            TextButton.icon(onPressed:(){
+              Navigator.pushNamed(context, '/choose_location');
+            },
+                icon: Icon(Icons.edit_location),
+                label: Text('Edit Location'),
+            )
+          ],
+        ),
+      ),
+    );;
   }
 }
+
